@@ -6,19 +6,21 @@ const BlogItem = props => {
   const {eachListBlog} = props
   const {id, title, topic, imageUrl, avatarUrl, author} = eachListBlog
   return (
-    <Link to={`/blogs/${id}`} className="link-items">
-      <div className="container-bg-card">
-        <img src={imageUrl} alt="profile" className="image-url" />
-        <div className="list-description-container">
-          <p className="topic-description">{topic}</p>
-          <h1 className="title-description">{title}</h1>
-          <div className="profile-container">
-            <img src={avatarUrl} alt={`author${id}`} className="author-url" />
-            <p className="author-description">{author}</p>
+    <li className="blog-item">
+      <Link to={`/blogs/${id}`} className="link-items">
+        <div className="container-bg-card">
+          <img src={imageUrl} alt={`item${id}`} className="image-url" />
+          <div className="list-description-container">
+            <p className="topic-description">{topic}</p>
+            <h1 className="title-description">{title}</h1>
+            <div className="profile-container">
+              <img src={avatarUrl} alt={`author${id}`} className="author-url" />
+              <p className="author-description">{author}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </li>
   )
 }
 

@@ -1,8 +1,10 @@
 import {Component} from 'react'
 
 import Loader from 'react-loader-spinner'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
 import BlogItem from '../BlogItem'
+import './index.css'
 
 class BlogList extends Component {
   state = {
@@ -39,9 +41,11 @@ class BlogList extends Component {
             <Loader type="TailSpin" color="#00bfff" height={50} width={50} />
           </div>
         ) : (
-          blogLists.map(eachObject => (
-            <BlogItem eachListBlog={eachObject} key={eachObject.id} />
-          ))
+          <ul className="blogs-list">
+            {blogLists.map(eachObject => (
+              <BlogItem eachListBlog={eachObject} key={eachObject.id} />
+            ))}
+          </ul>
         )}
       </div>
     )
